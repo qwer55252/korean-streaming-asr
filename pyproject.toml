@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "korean-streaming-asr"
+version = "0.1.0"
+description = "Local Korean microphone captions using whisper.cpp"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<3", "scipy>=1.11,<2", "sounddevice>=0.5,<0.6", "requests>=2.32,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "cmake>=3.24,<5"]
+
+[project.scripts]
+korean-asr = "korean_asr.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
